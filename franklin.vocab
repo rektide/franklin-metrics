@@ -1,0 +1,17 @@
+<emotionml version="1.0" xmlns="http://www.w3.org/2009/10/emotionml">
+<vocab type="appraisal" id="franklin">
+<item name="temperance"/>
+<item name="silence"/>
+<item name="order"/>
+<item name="resolution"/>
+<item name="frugality"/>
+<item name="industry"/>
+<item name="sincerity"/>
+<item name="justice"/>
+<item name="moderation"/>
+<item name="cleanliness"/>
+<item name="tranquility"/>
+<item name="chastity"/>
+<item name="humility"/>
+</vocal>
+</emotionml>

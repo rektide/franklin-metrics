@@ -1,39 +1,44 @@
-import React, { Component } from 'react';
-import { NICE, SUPER_NICE } from './colors';
+import React, { Component } from "react"
+import { NICE, SUPER_NICE } from "./colors"
+import { inherits } from "util"
 
-class Counter extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { counter: 0 };
-		this.interval = setInterval(() => this.tick(), 1000);
-	}
+function Counter(props){
+	//super(props)
+	Counter.super_.call(this, props)
+	this.state = { counter: 0 }
+	this.interval = setInterval(() => this.tick(), 1000)
+	return this
+}
+inherits(Counter, Component)
 
-	tick() {
-		this.setState({
-			counter: this.state.counter + this.props.increment
-		});
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.interval);
-	}
-
-	render() {
-		return (
-			<h1 style={{ color: this.props.color }}>
-				Counter ({this.props.increment}): {this.state.counter}
-			</h1>
-		);
-	}
+Counter.prototype. tick= function(){
+	this.setState({
+		counter: this.state.counter + this.props.increment
+	})
 }
 
-export class App extends Component {
-	render() {
-		return (
-			<div>
-				<Counter increment={1} color={NICE} />
-				<Counter increment={5} color={SUPER_NICE} />
-			</div>
-		);
-	}
+Counter.prototype.componentWillUnmount= function(){
+	clearInterval(this.interval)
+}
+
+Counter.prototype.render= function(){
+	return (
+		<h1 style={{ color: this.props.color }}>
+			Counter ({this.props.increment}): {this.state.counter}
+		</h1>
+	)
+}
+
+function App(){
+	return this
+}
+inherits(App, Component)
+
+App.prototype.render= function(){
+	return (
+		<div>
+			<Counter increment={1} color={NICE} />
+			<Counter increment={5} color={SUPER_NICE} />
+		</div>
+	)
 }

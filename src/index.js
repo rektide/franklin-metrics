@@ -4,6 +4,6 @@ import { App } from "./App"
 
 var
   app= (<App />),
-  root= document.getElementById("root")
+  root= document.getElementById( "root")
 
 ReactDOM.render(app, root)

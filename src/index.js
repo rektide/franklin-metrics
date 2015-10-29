@@ -1,4 +1,9 @@
 import React from "react"
+import ReactDOM from "react-dom"
 import { App } from "./App"
 
-React.render(<App />, document.getElementById("root"))
+var
+  app= (<App />),
+  root= document.getElementById("root")
+
+ReactDOM.render(app, root)

@@ -43,13 +43,19 @@
     "express": "^4.13.3",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.0",
-    "redbox-react": "^1.0.1",
+    "redbox-react": "^1.0.2",
     "rimraf": "^2.4.3",
     "webpack": "^1.9.6",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.0.0"
   },
   "dependencies": {
-    "react": "^0.13.0"
+    "insure-classiness": "^1.1.0",
+    "koa": "^1.1.1",
+    "koa-express": "^1.1.0",
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1",
+    "webpack-dev-server": "^1.12.1",
+    "webpack-koa-middleware": "0.0.4"
   }
 }

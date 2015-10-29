@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { NICE, SUPER_NICE } from "./colors"
 import { inherits } from "util"
 
-function Counter(props){
+export function Counter(props){
 	//super(props)
 	Counter.super_.call(this, props)
 	this.state = { counter: 0 }
@@ -29,7 +29,7 @@ Counter.prototype.render= function(){
 	)
 }
 
-function App(){
+export function App(){
 	return this
 }
 inherits(App, Component)

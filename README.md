@@ -1,4 +1,4 @@
-# Reboildux
+# Reboilerdux
 
 Replete joyous hacktastical Webpack React boilerplate with,
 

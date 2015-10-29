@@ -1,20 +1,30 @@
-var path= require( "path")
-var express= require( "express")
-var webpack= require( "webpack")
 var config= require( "./webpack.config.dev")
+var fs= require( "fs")
+var Koa= require( "koa")
+var koaWebpackDevMiddleware= require( "koa-webpack-dev-middleware")
+var koaWebpackHotMiddleware= require( "koa-webpack-hot-middleware")
+var path= require( "path")
+var webpack= require( "webpack")
 
-var app= express()
+var app= new Koa()
 var compiler= webpack( config)
 
-app.use( require( "webpack-dev-middleware")( compiler, {
-	noInfo: true,
-	publicPath: config.output.publicPath
+app.use( koaWebpackDevMiddleware(
+	compiler,
+	{
+		noInfo: true,
+		publicPath: config.output.publicPath
 }))
 
-app.use( require( "webpack-hot-middleware")( compiler))
+app.use( koaWebpackHotMiddleware( compiler))
 
-app.get( "*", function( req, res) {
-	res.sendFile( path.join( __dirname, "index.html"))
+var indexFile= path.join( __dirname, "index.html")
+app.use( function*( next){
+	if( this.url== "/"|| this.url== "/index.html"){
+		this.response.type= "text/html"
+		this.body= fs.createReadStream(indexFile)
+	}
+	yield next
 })
 
 app.listen( 3000, "localhost", function( err) {
@@ -22,6 +32,5 @@ app.listen( 3000, "localhost", function( err) {
 		console.log( err)
 		return
 	}
-
 	console.log( "Listening at http://localhost:3000")
 })

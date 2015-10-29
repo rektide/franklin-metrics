@@ -2,12 +2,12 @@
 
 Replete joyous hacktastical Webpack React boilerplate with,
 
-* `react-transform-boilerplate` underpinnings
+* [`react-transform-boilerplate`](https://github.com/gaearon/react-transform-boilerplate) underpinnings.
   * [`babel-plugin-react-transform`](https://github.com/gaearon/babel-plugin-react-transform)
   * "and a few custom transforms."
-* `redux` `redux-router`
-* Koa dev and prods
-* Classic es6 classes
+* [`redux`](https://github.com/rackt/redux), [`redux-router`](https://github.com/rackt/redux-router)
+* [`Koa`](https://github.com/koajs/koa) dev and prods
+* Classic es6 protoclasses (via [`inherts`](https://github.com/isaacs/inherits))
 
 # Demo
 

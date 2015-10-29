@@ -50,6 +50,7 @@
     "webpack-hot-middleware": "^2.0.0"
   },
   "dependencies": {
+    "inherits": "^2.0.1",
     "insure-classiness": "^1.1.0",
     "koa": "^1.1.1",
     "koa-express": "^1.1.0",

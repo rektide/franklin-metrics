@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { NICE, SUPER_NICE } from "./colors"
-import { inherits } from "util"
+import inherits from "inherits"
 
 export function Counter(props){
 	//super(props)
